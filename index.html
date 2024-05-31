@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon-16x16.png">
+
+    <title>randry store</title>    
+
+
+    <style>
+   body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000; /* لون الخلفية للصفحة */
+            color: #000000;
+        }
+       h2 {
+  text-align: center; /* توسيط النص */
+  background-color: transparent;
+  font-size: 21px;
+  color: rgb(238, 238, 238);
+  margin-top: 266px; /* المسافة من الأعلى */
+  margin-bottom: 10px; /* المسافة من الأسفل */
+  margin-left: 1%; /* المسافة من اليسار */
+}
+        .background-image {
+    background-image: url('randry store 1.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    opacity: 0; /* جعل الصورة غير مرئية بشكل افتراضي */
+    transition: opacity 1s ease-in-out; /* تأثير الانتقال ببطء لمدة 1 ثانية */
+}
+.background-image.show {
+            opacity: 1; /* جعل الصورة مرئية */
+        }
+.container .button {
+    text-decoration: none; /* إزالة خط الأسفل من الروابط */
+}
+.submit-button {
+    width: 140px;
+    height: 40px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px; /* تحديد ارتفاع السطر للنص */
+    transition: transform 0.3s ease; /* تحديد التحويل */
+    transform: translateX(760%) translateY(-480%); /* تحريك الزر في الموقع المطلوب */
+    display: inline-block;
+    text-decoration: none; /* إزالة تنسيق الرابط الافتراضي */
+}
+/* تحديد حجم الزر عند التحوم */
+.submit-button:hover {
+    transform: translateX(760%) translateY(-510%); /* تحريك الزر قليلاً لأعلى عند التحوم */
+}
+.background-image.show {
+    opacity: 1; /* جعل الصورة مرئية */
+}
+ /* تنسيق الصورة الخلفية للجوال */
+ @media screen and (min-width: 601px) and (max-width: 800px) {
+    .background-image {
+        background-image: url('randry store 2.png');
+    }    
+    #image3 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(10%) translateY(-23%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+        #image4 {
+    width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+    height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+    transform: translateX(-110%) translateY(100%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+    display: block; /* عرض الصورة بشكل كامل على الشاشة */
+}
+     #image5 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(-110%) translateY(100%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+
+    #image6 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(16%) translateY(-23%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    } 
+    #image7 {
+    width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+    height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+    transform: translateX(-110%) translateY(100%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+    display: block; /* عرض الصورة بشكل كامل على الشاشة */
+}
+#image8 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(-110%) translateY(90%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+ 
+    .video-wrapper {
+    width: 100%;
+    position: relative;
+    left:90%;
+    top: 8000%;
+    transform: translate(-50%, -50%);
+}
+   #image9 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(90%) translateY(330%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+        .submit-button {
+        width: 120px;
+        height: 40px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 40px; /* تحديد ارتفاع السطر للنص */
+        transition: transform 0.3s ease; /* تحديد التحويل */
+        transform: translateX(260%) translateY(3450%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: inline-block;
+        text-decoration: none; /* إزالة تنسيق الرابط الافتراضي */
+}
+/* تحديد حجم الزر عند التحوم */
+.submit-button:hover {
+    transform: translateX(260%) translateY(3420%); /* تحريك الزر قليلاً لأعلى عند التحوم */
+}
+}@media screen and (min-width: 901px) and (max-width: 1000px) {
+    .background-image {
+        background-image: url('randry store 2.png');
+    }    
+    #image3 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(10%) translateY(-23%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+        #image4 {
+    width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+    height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+    transform: translateX(-110%) translateY(100%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+    display: block; /* عرض الصورة بشكل كامل على الشاشة */
+}
+     #image5 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(-110%) translateY(100%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+
+    #image6 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(16%) translateY(-23%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    } 
+    #image7 {
+    width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+    height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+    transform: translateX(-110%) translateY(100%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+    display: block; /* عرض الصورة بشكل كامل على الشاشة */
+}
+#image8 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(-110%) translateY(90%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+ 
+    .video-wrapper {
+    width: 100%;
+    position: relative;
+    left: 80%;
+    top: 8000%;
+    transform: translate(-50%, -50%);
+}
+   #image9 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(90%) translateY(320%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+        .submit-button {
+        width: 120px;
+        height: 40px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 40px; /* تحديد ارتفاع السطر للنص */
+        transition: transform 0.3s ease; /* تحديد التحويل */
+        transform: translateX(260%) translateY(3450%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: inline-block;
+        text-decoration: none; /* إزالة تنسيق الرابط الافتراضي */
+}
+/* تحديد حجم الزر عند التحوم */
+.submit-button:hover {
+    transform: translateX(260%) translateY(3420%); /* تحريك الزر قليلاً لأعلى عند التحوم */
+}}
+
+@media screen and (min-width:1001px) and (max-width: 1200px) {
+    .background-image {
+        background-image: url('randry store 2.png');
+    }    
+    #image3 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(10%) translateY(-23%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+        #image4 {
+    width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+    height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+    transform: translateX(-110%) translateY(100%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+    display: block; /* عرض الصورة بشكل كامل على الشاشة */
+}
+     #image5 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(-110%) translateY(100%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+
+    #image6 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(16%) translateY(-23%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    } 
+    #image7 {
+    width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+    height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+    transform: translateX(-110%) translateY(100%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+    display: block; /* عرض الصورة بشكل كامل على الشاشة */
+}
+#image8 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(-110%) translateY(90%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+ 
+    .video-wrapper {
+    width: 100%;
+    position: relative;
+    left: 80%;
+    top: 8000%;
+    transform: translate(-50%, -50%);
+}
+   #image9 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(90%) translateY(320%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+        .submit-button {
+        width: 120px;
+        height: 40px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 40px; /* تحديد ارتفاع السطر للنص */
+        transition: transform 0.3s ease; /* تحديد التحويل */
+        transform: translateX(260%) translateY(3450%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: inline-block;
+        text-decoration: none; /* إزالة تنسيق الرابط الافتراضي */
+}
+/* تحديد حجم الزر عند التحوم */
+.submit-button:hover {
+    transform: translateX(260%) translateY(3420%); /* تحريك الزر قليلاً لأعلى عند التحوم */
+}}
+/* تنسيق الصورة الخلفية للجوال */
+@media screen and (min-width: 801px) and (max-width: 900px) {
+    .background-image {
+        background-image: url('randry store 2.png');
+    }    
+    #image3 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(10%) translateY(-23%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+        #image4 {
+    width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+    height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+    transform: translateX(-110%) translateY(100%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+    display: block; /* عرض الصورة بشكل كامل على الشاشة */
+}
+     #image5 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(-110%) translateY(100%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+
+    #image6 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(16%) translateY(-23%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    } 
+    #image7 {
+    width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+    height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+    transform: translateX(-110%) translateY(100%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+    display: block; /* عرض الصورة بشكل كامل على الشاشة */
+}
+#image8 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(-110%) translateY(90%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+ 
+    .video-wrapper {
+    width: 100%;
+    position: relative;
+    left: 80%;
+    top: 8000%;
+    transform: translate(-50%, -50%);
+}
+   #image9 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(90%) translateY(320%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+        .submit-button {
+        width: 120px;
+        height: 40px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 40px; /* تحديد ارتفاع السطر للنص */
+        transition: transform 0.3s ease; /* تحديد التحويل */
+        transform: translateX(260%) translateY(3450%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: inline-block;
+        text-decoration: none; /* إزالة تنسيق الرابط الافتراضي */
+}
+/* تحديد حجم الزر عند التحوم */
+.submit-button:hover {
+    transform: translateX(260%) translateY(3420%); /* تحريك الزر قليلاً لأعلى عند التحوم */
+}
+}
+ /* تنسيق الصورة الخلفية للجوال */
+@media screen and (max-width: 600px) {
+    .background-image {
+        background-image: url('randry store 2.png');
+    }    
+    #image3 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(30%) translateY(-23%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+        #image4 {
+    width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+    height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+    transform: translateX(-110%) translateY(100%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+    display: block; /* عرض الصورة بشكل كامل على الشاشة */
+}
+     #image5 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(-110%) translateY(100%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+
+    #image6 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(36%) translateY(-23%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    } 
+    #image7 {
+    width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+    height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+    transform: translateX(-110%) translateY(100%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+    display: block; /* عرض الصورة بشكل كامل على الشاشة */
+}
+#image8 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(-110%) translateY(90%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+ 
+    .video-wrapper {
+    width: 100%;
+    position: relative;
+    left: 107%;
+    top: 8000%;
+    transform: translate(-50%, -50%);
+}
+   #image9 {
+        width: 60%; /* عرض الصورة يشغل 60% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        transform: translateX(90%) translateY(360%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: block; /* عرض الصورة بشكل كامل على الشاشة */
+    }
+        .submit-button {
+        width: 120px;
+        height: 40px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 40px; /* تحديد ارتفاع السطر للنص */
+        transition: transform 0.3s ease; /* تحديد التحويل */
+        transform: translateX(150%) translateY(3550%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+        display: inline-block;
+        text-decoration: none; /* إزالة تنسيق الرابط الافتراضي */
+}
+/* تحديد حجم الزر عند التحوم */
+.submit-button:hover {
+    transform: translateX(150%) translateY(3520%); /* تحريك الزر قليلاً لأعلى عند التحوم */
+}
+}
+/* تنسيق الأزرار */
+        .container {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 20px; /* هام: إضافة هامش للأزرار */
+        }
+
+     
+        .button {
+            padding: 15px 30px; /* تعديل حجم الزر */
+            background-color: transparent; /* جعل خلفية الزرار شفافة */
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 5px; /* هام: إضافة هامش بين الأزرار */
+            font-size: 18px; /* تحديد حجم الزر باستخدام font-size */
+        }
+        /* تغيير لون الزرار عند التحويم */
+        .button:hover {
+            background-color: transparent; /* جعل خلفية الزر شفافة عند التحويم */
+            transform: scale(1.1); /* تكبير حجم الزرار عند التحويم */
+        }
+
+        .products {
+            max-width: 800px;
+            margin: 20px;
+            padding: 20px;
+            display: none;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: #000000;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+ 
+        .product {
+            width: 200px;
+            height: 250px;
+            margin-bottom: 20px;
+            border: 1px solid #612e2e;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+ 
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* تحديد عنصر العرض عند الوصول إلى أسفل الصفحة */
+        .show {
+    opacity: 0; /* جعل الصورة غير مرئية بشكل افتراضي */
+    transition: opacity 0.5s ease 0.5s; /* تأخير بدء التحول لمدة 0.5 ثانية */
+}
+.video-wrapper {
+    opacity: 0;
+    transition: opacity 0.5s ease 0.5s; /* تأخير بدء التحول لمدة 0.5 ثانية */
+}
+        /* تحكم في محاذاة الصورة */
+        #image1 {
+            position: relative;
+            width: 430px; /* تحديد عرض الصورة */
+            margin: 0 auto; /* توسيط الصورة */
+            margin-bottom: 1300px; /* زيادة المسافة بين الصورة الأمامية والصورة */
+            transform: translateX(80%) translateY(300%); /* تحريك الصورة 20% أفقيًا و 10% عموديًا بالنسبة للعناصر الأخرى */
+            left: 10%; /* المسافة من اليسار بالنسبة للعناصر الأخرى */
+        }
+
+        #image1 img {
+            display: block;
+            max-width: 100%; /* ضمان عدم تجاوز الصورة حجم العنصر الأب */
+            height: auto;
+            margin-bottom: 200px; /* زيادة المسافة بين الصورة الأمامية والصورة */
+        }
+
+        #image2 {
+            position: relative;
+            width: 430px; /* تحديد عرض الصورة */
+            margin: 0 auto; /* توسيط الصورة */
+            margin-bottom: 300px; /* زيادة المسافة بين الصورة الأمامية والصورة */
+            transform: translateX(-200%) translateY(100%); /* تحريك الصورة 30% أفقيًا و 30% عموديًا بالنسبة للعناصر الأخرى */
+            left: 30%; /* المسافة من اليسار بالنسبة للعناصر الأخرى */
+        }
+
+        #image2 img {
+            display: block;
+            max-width: 100%; /* ضمان عدم تجاوز الصورة حجم العنصر الأب */
+            height: auto;
+            margin-bottom: 100px; /* زيادة المسافة بين الصورة الأمامية والصورة */
+        }
+        .container {
+            text-align: center; /* محاذاة العناصر في الوسط */
+        }
+
+        .image {
+            display: inline-block; /* جعل الصور عناصر مستقلة */
+            margin: 20px; /* تحديد المسافة بين الصور */
+        }
+        .container {
+        position: relative;
+    }
+
+    .video-wrapper {
+        width: 500px;
+        height: 500px;
+        transform: translateX(-110%) translateY(-190%); /* تحريك الصورة 30% أفقيًا و 30% عموديًا بالنسبة للعناصر الأخرى */
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .video-wrapper video {
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* تعيين pointer-events إلى none لإخفاء أزرار التحكم */
+    }
+    .text-below-video {
+        position: absolute;
+        bottom: 20px;
+        left: 60%;
+        transform: translateX(-50%);
+        color: white;
+        font-size:30px;
+    }
+</style>
+</head>
+<body>
+   <!-- الصورة الخلفية -->
+    <div class="background-image">
+        <!-- رأس الصفحة -->
+        <header>
+            <!-- الأزرار -->
+            <div class="container">
+                <a href="page1.html" class="button">سياسة المتجر</a>
+                <a href="page2.html" class="button">منتجاتنا</a>
+                <a href="page3.html" class="button">صفحاتنا الرسمية</a>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <img src="GOGO2.png" alt="" class="show" id="image3" style="width: 600px; height: 700px; margin-top: 60px; margin-left:-1000px;">
+        <img src="free.png" alt="" class="show" id="image6" style="width: 600px; height: 700px; margin-top: 350px; margin-left:-580px;">
+      
+        <img src="GOGO3.png" alt="" class="show" id="image4" style="width: 600px; height: 700px; margin-top: 90px; margin-left:500px;">
+        <img src="return.png" alt=" " class="show" id="image7" style="width: 600px; height: 700px; margin-top: 350px; margin-left:-600px;">
+
+        <img src="GOGO4.png" alt="" class="show" id="image5" style="width: 600px; height: 600px; margin-top: 1000px; margin-left: -600px;">
+        <img src="midea.png" alt=" " class="show" id="image8" style="width: 600px; height: 700px; margin-top: 1200px; margin-left:-600px;">
+        <img src="24hour.png" alt="" class="show" id="image9" style="width: 600px; height: 700px; margin-top:68%; margin-left:-1800px;">
+
+    </div>
+
+    <div class="container">
+        <div class="products" id="products">
+            <!-- يمكنك حذف العناصر المرتبطة بالصور هنا -->
+        </div>
+    </div>
+            <!-- إضافة المزيد من المنتجات هنا -->
+        </div>
+    </div>
+    
+    <!-- إضافة الصورة الأولى -->
+ 
+  
+    <div class="container">
+        <div class="video-wrapper">
+            <video autoplay loop muted>
+                <source src="GOGO1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+</div>
+<script>
+
+window.addEventListener('scroll', function() {
+    var images = document.querySelectorAll('.show');
+    var paragraphs = document.querySelectorAll('.show-paragraph');
+    var videos = document.querySelectorAll('.video-wrapper');
+
+    images.forEach(function(image) {
+        var rect = image.getBoundingClientRect();
+        var windowHeight = window.innerHeight;
+        var threshold = windowHeight - (windowHeight / 4);
+
+        if (rect.top <= threshold) {
+            image.style.opacity = 1;
+        }
+    });
+
+    paragraphs.forEach(function(paragraph) {
+        var rect = paragraph.getBoundingClientRect();
+        var windowHeight = window.innerHeight;
+        var threshold = windowHeight - (windowHeight / 4);
+
+        if (rect.top <= threshold) {
+            paragraph.style.opacity = 1;
+        }
+    });
+
+    videos.forEach(function(video) {
+        var rect = video.getBoundingClientRect();
+        var windowHeight = window.innerHeight;
+        var threshold = windowHeight - (windowHeight / 4);
+
+        if (rect.top <= threshold) {
+            video.style.opacity = 1;
+        }
+    });
+});
+window.addEventListener('load', function() {
+        document.querySelector('.background-image').classList.add('show');
+    });
+
+
+</script>
+    <a href="page2.html"type="submit" class="submit-button">تصفح المنتحات</a>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحاتنا</title>
+    <style>
+        body {
+            background-color: #000; /* لون الخلفية */
+            color: #fff; /* لون النص */
+            font-family: Arial, sans-serif;
+            text-align: center; /* محاذاة النص في الوسط */
+            padding-top: 50px; /* هامش أعلى للمحتوى */
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .image-container img {
+            width: 300px; /* عرض الصورة */
+            height: auto; /* الارتفاع التلقائي */
+            margin: 20px; /* هامش بين الصور */
+            cursor: pointer; /* مؤشر الفأرة يدل على أنه يمكن النقر */
+            transition: transform 0.3s; /* تحديد تأثير التحويل */
+        }
+
+        /* تكبير الصورة عند التحويل */
+        .image-container img:hover {
+            transform: scale(1.1); /* تكبير الصورة بنسبة 10٪ */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <a href="رابط1.html">
+            <img src="insta randry.png" alt="صورة 1">
+        </a>
+        <a href="رابط2.html">
+            <img src="randry facebook.png" alt="صورة 2">
+        </a>
+        <a href="https://wa.me/+9647847705716">
+            <img src="ghgh.png" alt="صورة 3">
+        </a>
+    </div>
+</body>
+</html>

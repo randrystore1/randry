@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>منتجاتنا</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center; /* محاذاة العناصر في الوسط */
+            margin: 0; /* إزالة هامش الصفحة الافتراضي */
+            padding: 0; /* إزالة تبديل الهامش الافتراضي */
+        }
+        header {
+            background-color: #000000; /* لون خلفية العنوان */
+            color: #fff; /* لون نص العنوان */
+            padding: 20px; /* هامش داخلي للعنوان */
+            width: 100%; /* جعل العنوان يأخذ عرض الشاشة بالكامل */
+            box-sizing: border-box; /* تأكد من أن الهامش ليس خارج العرض الكلي للعنصر */
+            position: absolute; /* جعل العنوان يكون بموضع مطلق بالنسبة للصفحة */
+            top: 0; /* تحديد المسافة بين العنوان والحافة العليا للصفحة */
+            right: 0; /* تحديد المسافة بين العنوان والحافة اليمنى للصفحة */
+        }
+        .gallery img {
+            margin: 1px; /* تحديد المسافة بين الصور */
+            width: 300px;
+            height: 300px;
+        }
+        .options {
+            display: none; /* إخفاء القائمة افتراضيًا */
+            position: absolute; /* تحديد وضعية المركب */
+            background-color: #ffffff; /* لون خلفية القائمة */
+            color: #000000; /* لون نص القائمة */
+            list-style-type: none; /* إزالة نقاط القائمة */
+            padding: 20px; /* هامش داخلي للقائمة */
+            border-radius: 5px; /* زوايا مستديرة للقائمة */
+            right: 1px; /* تحريك القائمة إلى اليمين */
+            top: 75%; /* وضع القائمة تحت الأيقونة */
+            z-index: 1000; /* تحديد ترتيب الطبقات للقائمة لتظهر فوق العناصر الأخرى */
+        }
+        .image1 img {
+            margin: 100px; /* تحديد المسافة بين الصور */
+            width: 300px;
+            height: 300px;
+            pointer-events: none; /* تعطيل التفاعل مع الصور بشكل افتراضي */
+        }
+          /* تغيير لون الروابط */
+        .options a {
+            color: #000000; /* لون الروابط عند الحالة العادية */
+            transition: color 0.3s ease; /* تحديد تأثير التغيير */
+        }
+        .options li a {
+    text-decoration: none; /* إزالة خط الأسفل من الروابط */
+}
+        .options a:hover {
+            color: #2ccdd8; /* لون الروابط عند التحويم */
+        }         
+        .image2 img {
+            margin: 100px; /* تحديد المسافة بين الصور */
+            width: 300px;
+            height: 300px;
+            pointer-events: none; /* تعطيل التفاعل مع الصور بشكل افتراضي */
+        }
+        .options li:hover {
+            transform: scale(1.1); /* تكبير العنصر عند التحويم بنسبة 10٪ */
+            color: #19ddeb; /* لون نص العنوان */
+        }
+   
+        .fa-magnifying-glass{
+            font-size:30px; /* حجم الرمز */
+        cursor: pointer; /* تغيير المؤشر إلى يد للإشارة إلى أن العنصر قابل للنقر */
+        transform: rotate(0deg); /* تدوير الرمز بزاوية 45 درجة */
+        position: fixed; /* تحديد الرمز بوضع ثابت */
+        top: 15px; /* تحديد المسافة بين الرمز والحافة العليا للصفحة */
+        right: 160px; /* تحديد المسافة بين الرمز والحافة اليمنى للصفحة */
+    }
+    .caption {
+        text-decoration: none; /* إزالة خط الأسفل من الروابط */
+}
+ .fa-bars {
+        font-size:30px; /* حجم الرمز */
+        cursor: pointer; /* تغيير المؤشر إلى يد للإشارة إلى أن العنصر قابل للنقر */
+        transform: rotate(45deg); /* تدوير الرمز بزاوية 45 درجة */
+        position: fixed; /* تحديد الرمز بوضع ثابت */
+        top: 30px; /* تحديد المسافة بين الرمز والحافة العليا للصفحة */
+        right: 20px; /* تحديد المسافة بين الرمز والحافة اليمنى للصفحة */
+    }
+
+.fa-house{
+    font-size: 30px; /* حجم أيقونة القائمة */
+    cursor: pointer; /* تغيير المؤشر إلى يد للإشارة إلى أن العنصر قابل للنقر */
+    transform: translateX(-2700%) translateY(28%);
+
+}
+
+.fa-bars:hover {
+    transform: scale(1.1); /* تكبير الأيقونة عند التحويم بنسبة 10٪ */
+    transition: transform 0.3s ease; /* إضافة تحويل للأنماط للانتقال بسلاسة */
+}
+.caption {
+    text-align: center; /* محاذاة النص في الوسط */
+    margin-top: -45px; /* تباعد بين الصورة والنص */
+    font-size:26px; /* حجم الخط */
+    color: #000000; /* لون النص */
+    text-decoration: none ; /* إزالة خط تحت النص بشكل قاطع */
+
+}
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px; /* تحديد المسافة من الأعلى */
+        }
+        .options li {
+            padding: 5px 0;
+            cursor: pointer;
+            font-size: 26px; /* حجم النص */
+            background-color: transparent; /* جعل خلفية العناصر شفافة */
+        }
+        .gallery a {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            text-decoration: none; /* إزالة خط تحت الروابط */
+        }
+        .gallery a:hover {
+            transform: scale(1.1);
+        }
+        @media screen and (max-width: 768px) {
+    .gallery img {
+        width: 170px; /* عرض الصور في الجوال */
+        height: 170px; /* ارتفاع الصور في الجوال */
+        transition: transform 0.3s ease; /* تحديد تأثير التحويل */
+    }
+
+    .fa-bars {
+        font-size: 24px; /* حجم الرمز */
+        cursor: pointer; /* تغيير المؤشر إلى يد للإشارة إلى أن العنصر قابل للنقر */
+        transform: rotate(45deg); /* تدوير الرمز بزاوية 45 درجة */
+        position: fixed; /* تحديد الرمز بوضع ثابت */
+        top: 30px; /* تحديد المسافة بين الرمز والحافة العليا للصفحة */
+        right: 30px; /* تحديد المسافة بين الرمز والحافة اليمنى للصفحة */
+    }
+
+    .gallery img {
+        margin: 20px; /* إزالة أي هوامش */
+        transform: translateX(0%) translateY(33%);
+        pointer-events: none; /* تعطيل التفاعل مع الصور بشكل افتراضي */
+    }
+
+    .gallery img:hover {
+        pointer-events: auto; /* تفعيل التفاعل عند التحويل على الصورة */
+    
+    }.fa-house{
+    font-size: 24px; /* حجم أيقونة القائمة */
+    cursor: pointer; /* تغيير المؤشر إلى يد للإشارة إلى أن العنصر قابل للنقر */
+    transform: translateX(-654%) translateY(20%);
+}
+.caption {
+    text-align: center; /* محاذاة النص في الوسط */
+    margin-top: 37px; /* تباعد بين الصورة والنص */
+    font-size: 18px; /* حجم الخط */
+    color: #000000; /* لون النص */
+    text-decoration: none !important; /* إزالة خط تحت النص بشكل قاطع */
+}
+.fa-magnifying-glass{
+            font-size:24px; /* حجم الرمز */
+        cursor: pointer; /* تغيير المؤشر إلى يد للإشارة إلى أن العنصر قابل للنقر */
+        transform: rotate(0deg); /* تدوير الرمز بزاوية 45 درجة */
+        position: fixed; /* تحديد الرمز بوضع ثابت */
+        top: 26px; /* تحديد المسافة بين الرمز والحافة العليا للصفحة */
+        right: 160px; /* تحديد المسافة بين الرمز والحافة اليمنى للصفحة */
+    }
+}
+
+.options.shown {
+            display: block; /* عرض القائمة عندما تكون في حالة "shown" */
+        }
+    </style>
+</head>
+<body>
+  
+    <!-- العنوان هنا -->
+    <header>
+        <a href="index.html"><i class="fa-solid fa-house" style="color: #ffffff;"></i></a>   
+         
+           <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-bars fa-bounce"></i>        <!-- قائمة الخيارات -->
+        <ul class="options">
+            <li><a href="https://wa.me/+9647847705716">خدمة العملاء</a></li>
+            <li><a href="page1.html">سياسة المتجر</a></li>
+        </ul>
+    </header>
+
+    <div class="gallery">
+        <a href="page4.html" class="image1">
+            <img src="watch.png" alt="صورة 1">
+            <div class="caption">ساعة ابل</div>
+            <div>35.000د</div>
+      
+        </a>
+        <a href="page5.html" class="image2">
+            <img src="HAND.png" alt="صورة 2">
+            <div class="caption">سماعة ابل</div>
+            <div>30.000د</div>
+
+        </a>
+    </div>
+
+    <!-- تحميل مكتبة الأيقونات -->
+    <script src="js/all.min.js"></script>
+
+    <!-- السكريبت الخاص بعرض/إخفاء قائمة الخيارات -->
+    <script>
+        document.querySelector('.fa-bars').addEventListener('click', function() {
+            var options = document.querySelector('.options');
+            options.classList.toggle('shown'); 
+        });
+
+        // تحديد الصور
+        var image1 = document.querySelector('.image1 img');
+        var image2 = document.querySelector('.image2 img');
+
+        // تفعيل وتعطيل pointer events عند التحويم
+        image1.addEventListener('mouseover', function() {
+            image1.style.pointerEvents = 'auto';
+        });
+        image1.addEventListener('mouseout', function() {
+            image1.style.pointerEvents = 'none';
+        });
+        image2.addEventListener('mouseover', function() {
+            image2.style.pointerEvents = 'auto';
+        });
+        image2.addEventListener('mouseout', function() {
+            image2.style.pointerEvents = 'none';
+        });
+    </script>
+</body>
+</html>

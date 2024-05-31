@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #46e4dc; /* تعيين لون الخلفية للصفحة */
+            font-family: Arial, sans-serif; /* تعيين الخط */
+            text-align: center; /* محاذاة العناصر في الوسط */
+        }
+
+        h1 {
+            color: #01579b; /* تعيين لون العنوان */
+        }
+        #image3 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(-50%) translateY(6%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        width: 300px;
+         height: 450px;    }
+        form {
+            margin: auto; /* توسيط النموذج */
+            width: 40%; /* تحديد عرض النموذج */
+            padding: 20px; /* إضافة هامش داخلي */
+            background-color: #ffffff; /* تعيين لون الخلفية للنموذج */
+            border-radius: 10px; /* إضافة زوايا مستديرة */
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* إضافة ظل للنموذج */
+        }
+        .submit-button {
+    background-color:#000000 ; /* لون خلفية الزر */
+    color: #ffffff; /* لون النص */
+    padding: 10px 20px; /* هامش داخلي */
+    border: none; /* حدود */
+    border-radius: 5px; /* زوايا مستديرة */
+    cursor: pointer; /* المؤشر */
+    transition: background-color 0.3s; /* تأثير التحويل */
+    font-size: 20px; /* حجم الخط */
+}
+
+.submit-button:hover {
+    background-color: #222222; /* تغيير لون خلفية الزر عند التحويل */
+}
+        .input-field {
+            width: 63%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border: 2px solid #5cb85c; /* تغيير لون الحدود عند التركيز */
+        }
+
+        .input-field::placeholder {
+            color: #aaa; /* لون النص في حالة عدم التحديد */
+        }
+
+        label {
+            display: inline-block; /* عرض العنصر كبلوك متوازي */
+            width: 120px; /* تحديد عرض العنصر */
+            text-align: right; /* محاذاة النص إلى اليمين */
+        }
+        input[type="text"], input[type="tel"], input[type="email"] {
+            width: 60%; /* تحديد عرض حقل الإدخال */
+            padding: 10px; /* إضافة هامش داخلي */
+            margin: 10px 0; /* إضافة هامش خارجي */
+            border-radius: 5px; /* إضافة زوايا مستديرة */
+            border: 1px solid #ccc; /* تعيين حدود للحقل */
+            box-sizing: border-box; /* جعل عرض الحقل يشمل الهوامش والحدود */
+        }
+
+        input[type="submit"] {
+            background-color: #000000; /* تعيين لون خلفية زر الإرسال */
+            color: #ffffff; /* تعيين لون النص */
+            padding: 10px 20px; /* إضافة هامش داخلي */
+            border: none; /* إزالة حدود الزر */
+            border-radius: 5px; /* إضافة زوايا مستديرة */
+            cursor: pointer; /* تغيير المؤشر إلى يد عند التحويل */
+            transition: background-color 0.3s; /* تحديد تأثير التحويل */
+            font-size: 20px;
+        }
+
+        .input-field {
+            width:60%; /* تعديل عرض الحقل النصي */
+            max-width: 300px; /* تحديد الحد الأقصى للعرض */
+            padding: 10px;
+            margin: 8px auto; /* توسيط الحقل النصي */
+            display: block; /* عرض الحقل النصي كبلوك */
+            border: 1px solid #bebbbb;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transform: translateX(0%);
+        }
+
+        .input-field:focus {
+            outline: none;
+            border: 2px solid #5cb85c;
+        }
+
+        .input-field::placeholder {
+            color: #aaa;
+        }
+        @media screen and (min-width: 1601px) and (max-width: 2400px) {
+    input[type="tel"] {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    input[type="text"],input[type="email"] {
+            width: 90%; /* تحديد عرض حقل الإدخال */
+            padding: 10px; /* إضافة هامش داخلي */
+            margin: 10px 0; /* إضافة هامش خارجي */
+            border-radius: 5px; /* إضافة زوايا مستديرة */
+            border: 1px solid #ccc; /* تعيين حدود للحقل */
+            box-sizing: border-box; /* جعل عرض الحقل يشمل الهوامش والحدود */
+        }
+        #image3 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(-50%) translateY(13%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        width: 370px;
+         height: 470px;    }
+   
+         .input-field {
+
+     width:90%; /* تعديل عرض الحقل النصي */
+      max-width: 800px; /* تحديد الحد الأقصى للعرض */
+      padding: 10px;
+      margin: auto; /* توسيط الحقل النصي */
+      display: block; /* عرض الحقل النصي كبلوك */
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      box-sizing: border-box;
+       transform: translateX(0%);
+}
+}
+
+        /* تعديل حجم الخط في حالة الشاشات الكبيرة */
+        @media screen and (min-width: 1200px) and (max-width:1600px) {
+            .input-field {
+                font-size: 18px;
+                padding: 15px;
+          
+            }
+            #image3 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(-50%) translateY(2%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        width: 350px;
+         height: 450px;    }
+   
+            form {
+            margin: auto; /* توسيط النموذج */
+            width: 40%; /* تحديد عرض النموذج */
+            padding: 70px; /* إضافة هامش داخلي */
+            background-color: #ffffff; /* تعيين لون الخلفية للنموذج */
+            border-radius: 10px; /* إضافة زوايا مستديرة */
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* إضافة ظل للنموذج */
+        }
+        input[type="text"],input[type="email"] {
+            width: 83%; /* تحديد عرض حقل الإدخال */
+            padding: 10px; /* إضافة هامش داخلي */
+            margin: 10px 0; /* إضافة هامش خارجي */
+            border-radius: 5px; /* إضافة زوايا مستديرة */
+            border: 1px solid #ccc; /* تعيين حدود للحقل */
+            box-sizing: border-box; /* جعل عرض الحقل يشمل الهوامش والحدود */
+        }
+        input[type="tel"]{
+
+            width: 87%; /* تحديد عرض حقل الإدخال */
+            padding: 10px; /* إضافة هامش داخلي */
+            margin: 10px 0; /* إضافة هامش خارجي */
+            border-radius: 5px; /* إضافة زوايا مستديرة */
+            border: 1px solid #ccc; /* تعيين حدود للحقل */
+            box-sizing: border-box; /* جعل عرض الحقل يشمل الهوامش والحدود */
+        }
+        
+      
+        .input-field {
+
+                width:84%; /* تعديل عرض الحقل النصي */
+                max-width: 800px; /* تحديد الحد الأقصى للعرض */
+                padding: 10px;
+                margin: auto; /* توسيط الحقل النصي */
+                display: block; /* عرض الحقل النصي كبلوك */
+                border: 1px solid #ccc;
+                border-radius: 12px;
+                box-sizing: border-box;
+                transform: translateX(0%);
+            }
+            input[type="submit"] {
+            background-color: #000000; /* تعيين لون خلفية زر الإرسال */
+            color: #ffffff; /* تعيين لون النص */
+            padding: 10px 20px; /* إضافة هامش داخلي */
+            border: none; /* إزالة حدود الزر */
+            border-radius: 5px; /* إضافة زوايا مستديرة */
+            cursor: pointer; /* تغيير المؤشر إلى يد عند التحويل */
+            transition: background-color 0.3s; /* تحديد تأثير التحويل */
+            font-size: 20px;
+           transform: translateX(-190%) translateY(152%);
+
+}
+        }
+
+        input[type="submit"]:hover {
+            background-color: #222121; /* تعيين لون خلفية زر الإرسال عند التحويل */
+        }
+
+        @media screen and (min-width: 538px) and (max-width: 1199px) {
+            input[type="submit"] {
+            background-color: #000000; /* تعيين لون خلفية زر الإرسال */
+            color: #ffffff; /* تعيين لون النص */
+            padding: 10px 20px; /* إضافة هامش داخلي */
+            border: none; /* إزالة حدود الزر */
+            border-radius: 5px; /* إضافة زوايا مستديرة */
+            cursor: pointer; /* تغيير المؤشر إلى يد عند التحويل */
+            transition: background-color 0.3s; /* تحديد تأثير التحويل */
+            font-size: 20px;
+           transform: translateX(-0%) translateY(132%);
+
+            }   
+            #image3 {
+        width: 80%; /* عرض الصورة يشغل 80% من عرض الشاشة */
+        height: auto; /* تحديد الارتفاع بشكل تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+        position: relative; /* تحديد موقع الصورة بناءً على موقعها الأصلي */
+        left: 50%; /* تحديد موضع الصورة أفقيًا */
+        transform: translateX(-50%) translateY(13%); /* تحريك الصورة بالنسبة لموضعها الأصلي */
+        width: 300px;
+         height: 450px;    }
+     
+            form {
+            margin: auto; /* توسيط النموذج */
+            width: 35%; /* تحديد عرض النموذج */
+            padding: 70px; /* إضافة هامش داخلي */
+            background-color: #ffffff; /* تعيين لون الخلفية للنموذج */
+            border-radius: 10px; /* إضافة زوايا مستديرة */
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* إضافة ظل للنموذج */
+        }
+        .input-field {
+
+width:81%; /* تعديل عرض الحقل النصي */
+max-width: 800px; /* تحديد الحد الأقصى للعرض */
+padding: 10px;
+margin: auto; /* توسيط الحقل النصي */
+display: block; /* عرض الحقل النصي كبلوك */
+border: 1px solid #ccc;
+border-radius: 12px;
+box-sizing: border-box;
+transform: translateX(0%);
+}
+        input[type="text"],input[type="email"] {
+            width:81%; /* تحديد عرض حقل الإدخال */
+            padding: 10px; /* إضافة هامش داخلي */
+            margin: 10px 0; /* إضافة هامش خارجي */
+            border-radius: 5px; /* إضافة زوايا مستديرة */
+            border: 1px solid #ccc; /* تعيين حدود للحقل */
+            box-sizing: border-box; /* جعل عرض الحقل يشمل الهوامش والحدود */
+        }
+        input[type="tel"]{
+
+            width: 82%; /* تحديد عرض حقل الإدخال */
+            padding: 10px; /* إضافة هامش داخلي */
+            margin: 10px 0; /* إضافة هامش خارجي */
+            border-radius: 5px; /* إضافة زوايا مستديرة */
+            border: 1px solid #ccc; /* تعيين حدود للحقل */
+            box-sizing: border-box; /* جعل عرض الحقل يشمل الهوامش والحدود */
+        }
+        }
+
+
+    </style>
+</head>
+    <body>
+        <form action="https://formsubmit.co/headphonerandry@gmail.com" method="POST">          
+            
+                  <input type="text" name="name" required placeholder="الاسم الثلاثي" >
+      
+                  <input list="cities" name="city" required placeholder="اختر محافظتك"class="input-field" >
+
+            <datalist id="cities">
+        <option value="الأنبار">
+        <option value="بابل">
+        <option value="بغداد">
+        <option value="البصرة">
+        <option value="الديوانية">
+        <option value="دهوك">
+        <option value="القادسية">
+        <option value="المثنى">
+        <option value="ميسان">
+        <option value="النجف">
+        <option value="نينوى">
+        <option value="واسط">
+        <option value="كربلاء">
+        <option value="كركوك">
+        <option value="السليمانية">
+        <option value="صلاح الدين">
+        <option value="ديالى">
+        <option value="ذي قار">
+        </datalist>
+        <input type="text" name="area" required placeholder="المنطقة" >
+
+        <input type="text" name="location" required placeholder="اقرب نقطة دالة">
+
+        <input type="tel" name="phone" required placeholder="رقم الهاتف"  required pattern="[0-9]{11}">
+
+        <input type="submit" value="إرسال">
+    </form>
+
+    <img src="headphones564.png" alt="" class="show" id="image3">
+</body>
+        </script>
+    </body>
+    </html>
